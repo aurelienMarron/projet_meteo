@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-   <City :name="name" :id="id" :weather="weather" :temperature="temperature" :updated-at="dateFormate"/>
+   <City v-for="city in cities" :key="city.id" :name="city.name"  :weather="city.weather" :temperature="city.temperature" :updatedAt="city.updatedAt"/>
 
   </div>
 
@@ -8,7 +8,8 @@
 
 <script>
 import City from './City.vue'
-import { format } from 'timeago.js';
+
+
 
 export default {
   name: 'HelloWorld',
@@ -35,11 +36,8 @@ data(){
     ]
   }
 },
-  computed:{
-    dateFormate(){
-      return format(this.updatedAt,"fr_FR")
-    }
-  }
+
+
 
 };
 

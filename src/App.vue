@@ -1,16 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld />
+  <img alt="Vue logo" src="https://www.thailandee.com/img/weather-thailand.jpg">
+  <router-link to="/Cities">Go to cities</router-link>
+  <router-view></router-view>
 </template>
 
 <script>
-import HelloWorld from './components/CitiesList.vue'
+
 
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
   }
 }
 </script>

@@ -1,12 +1,11 @@
 <template>
-  <div v-for="city in cities">
-    <h1>{{ city.name }}</h1>
+  <div >
+    <h1>{{ name }}</h1>
 
     <ul>
-      <li>Id: {{city.id}}</li>
-      <li>Temps: {{city.weather}}</li>
-      <li>Température: {{city.temperature}}</li>
-      <li>Date: {{city.updatedAt.toLocaleString()}}</li>
+      <li>Temps: {{ weather }}</li>
+      <li>Température: {{ temperature }}</li>
+      <li>Date: {{ dateFormate }}</li>
     </ul>
   </div>
 
@@ -15,9 +14,17 @@
 
 <script>
 
+
+import {format} from "timeago.js";
+
 export default {
   name: 'City',
-  props:['name','id','weather','temperature','updatedAt'],
+  props:['name','weather','temperature','updatedAt'],
+  computed:{
+    dateFormate(){
+      return format(this.updatedAt,"fr_FR")
+    }
+  }
 
 };
 </script>
